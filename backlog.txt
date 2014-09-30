@@ -7,8 +7,12 @@ BACKLOG PROJETO QUIMICA
 - Concertar sincronia X, Y e Z
 	- CORRIGIO 16/07/2014 21h - 22h
 -Carregar Arquivos XLS
+	- CORRIGIDO 30/09/2014 10h - 16h
 -Gerar Arquivos XLS
+	- CORRIGIDO 30/09/2014 16h - 17h
 -Validar quantidades de Coficiente A é igual a Coeficientes L
+	- CORRIGIDO 30/09/2014 16h - 17h
+-Calculo Simples de Retenção
 -Posicionamento de camera após Calculo
 -Mostar qual pico representa determinado coeficiente
 -Colocar Picos em ordem cronologica

@@ -80,9 +80,6 @@ function updateTextInput(obj, elementInput, mesh){
 
 	document.getElementById(elementInput).value = obj.value;
 
-	console.log('PASSEI NO UPDATE TEXT!');
-	console.log(elementInput);
-
 	if(elementInput == 'textRange10'){
 
 		var position = parseFloat(obj.value);
@@ -201,6 +198,11 @@ function bestFunction(){
 
 	var m1 = 0;
 	var x = 0;
+
+	if(coefP.length != coefL.length){
+		alert("NUMERO DE LINHAS DE COEFICIENTES ESTÃO DIFERENTES!!!");
+		return;
+	}
 
 	console.log('INICIO!!!');
 

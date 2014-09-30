@@ -86,10 +86,18 @@ var gridTable = function(nameTable, idTable, field, dataField){
 	this.buttonSave = function(){
 
 		var csvData = '';
+		var cont = 1;
 
 		for (var i in arrayData){
 
-			csvData = csvData + arrayData[i].dataT + ";";	
+			if(cont == field.length){
+				csvData = csvData + arrayData[i].dataT + "\n";
+				cont = 1;
+			}else{
+				csvData = csvData + arrayData[i].dataT + ";";
+				cont++;
+			}
+			console.log(i, arrayData[i].dataT);		
 
 		}
 
@@ -118,22 +126,30 @@ var gridTable = function(nameTable, idTable, field, dataField){
 			var textFromFileLoaded = fileLoadedEvent.target.result;
 			var cont = textFromFileLoaded.length;
 
-			textFromFileLoaded = textFromFileLoaded.split(";");
-			textFromFileLoaded.splice(cont-1,1);
-			cont = textFromFileLoaded.length;
+			textFromFileLoaded = textFromFileLoaded.split("\n");
+			textFromFileLoaded.pop();
 
-			for(i in textFromFileLoaded){
+			console.log(textFromFileLoaded);
 
-				if(j == field.length){
-					j = 0
+			//textFromFileLoaded.splice(cont-1,1);
+			//cont = textFromFileLoaded.length;
+
+			for(x in textFromFileLoaded){
+
+				textFromFileLoaded[x] = textFromFileLoaded[x].split(";");
+
+				for(i in textFromFileLoaded[x]){
+
+					if(j == field.length){
+						j = 0
+					}
+
+					arrayData.push(new dataTable(dataField[j],textFromFileLoaded[x][i]));
+
+					j++;
+
 				}
-
-				arrayData.push(new dataTable(dataField[j],textFromFileLoaded[i]));
-
-				j++;
-
 			}
-
 			grid();
 
 		}
@@ -161,16 +177,16 @@ var gridTable = function(nameTable, idTable, field, dataField){
 		for(var j = 0; j < (arrayData.length/field.length);j++){
 
 			var obj = {};
+			var numField = 0;
 
 			for(var i in field){
 
-				var fieldLine = arrayData[k].field;
+				var fieldLine = arrayData[numField].field;
 
 				obj[fieldLine] = arrayData[k].dataT;
-
-				//console.log(k);
 			
 				k = k + 1;
+				numField = numField + 1;
 
 			}
 
