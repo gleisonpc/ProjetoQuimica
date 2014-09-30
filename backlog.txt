@@ -1,0 +1,17 @@
+BACKLOG PROJETO QUIMICA
+--------------------------------------------------------------------
+
+-Cubo na primeira Tela
+	- Circulo no centro do cubo se movo de acordo com X, Y e Z
+		- CORRIGIDO 28/07/2014 17h - 19h
+- Concertar sincronia X, Y e Z
+	- CORRIGIO 16/07/2014 21h - 22h
+-Carregar Arquivos XLS
+-Gerar Arquivos XLS
+-Validar quantidades de Coficiente A é igual a Coeficientes L
+-Posicionamento de camera após Calculo
+-Mostar qual pico representa determinado coeficiente
+-Colocar Picos em ordem cronologica
+-Picos com cores diferente
+-Picos com nomes dos coeficientes
+-Picos com valores dos tempos de retenção
